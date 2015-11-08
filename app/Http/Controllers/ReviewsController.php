@@ -13,6 +13,13 @@ class ReviewsController extends Controller
     {
         $reviews = Review::all();
 
-        return $reviews;
+        return view('reviews.index', compact('reviews'));
+    }
+
+    public function show($id)
+    {
+        $review = Review::findorfail($id);
+
+        return view('reviews.show', compact('review'));
     }
 }
