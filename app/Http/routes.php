@@ -1,14 +1,7 @@
 <?php
 
-/**
- * The Home Page
- */
-Route::get('/', 'PagesController@home');
+Route::get('about', 'PagesController@about');
 
-/**
- * Authentication
- */
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController'
-]);
+Route::get('contact', 'PagesController@contact');
+
+Route::get('reviews', 'ReviewsController@index');
