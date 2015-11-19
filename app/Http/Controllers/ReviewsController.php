@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReviewRequest;
 use App\Review;
 use App\Http\Requests;
-use Request;
 use App\Http\Controllers\Controller;
+// use Symfony\Component\HttpFoundation\Request; not the right request
 
 class ReviewsController extends Controller
 {
@@ -28,11 +29,26 @@ class ReviewsController extends Controller
         return view('reviews.create');
     }
 
-    public function store()
+    public function store(ReviewRequest $request)
     {
-        $input = Request::all();
+        $input = $request->all();
 
         Review::create($input);
+
+        return redirect('reviews');
+    }
+
+    public function edit($id)
+    {
+        $review = Review::findOrFail($id);
+        return view('reviews.edit', compact('review'));
+    }
+
+    public function update($id, ReviewRequest $request)
+    {
+        $review = Review::findOrFail($id);
+
+        $review->update($request->all());
 
         return redirect('reviews');
     }
