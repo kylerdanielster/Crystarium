@@ -10,6 +10,12 @@ use App\Http\Controllers\Controller;
 
 class ReviewsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => 'index']);
+    }
+
     public function index()
     {
         $reviews = Review::latest()->get();

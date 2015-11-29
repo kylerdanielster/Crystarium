@@ -10,3 +10,9 @@ Route::get('contact', 'PagesController@contact');
 //Route::post('reviews', 'ReviewsController@store');
 
 Route::resource('reviews', 'ReviewsController');
+
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController'
+]);
+
