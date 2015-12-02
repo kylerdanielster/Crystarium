@@ -18,9 +18,9 @@
     <div class="container-fluid">
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">Twitch</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/reviews">Reviews</a></li>
+                <li><a href="http://www.twitch.tv/evenglare/profile">Twitch</a></li>
                 <li><a href="#">Campaigns</a></li>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Forums</a></li>
