@@ -23,9 +23,9 @@
                 <li><a href="http://www.twitch.tv/evenglare/profile">Twitch</a></li>
                 <li><a href="#">Campaigns</a></li>
                 <li><a href="#">FAQ</a></li>
-                <li><a href="#">Forums</a></li>
+                {{--<li><a href="#">Forums</a></li>--}}
                 <li><a href="#">Submissions</a></li>
-                <li><a href="#">Character Sheets</a></li>
+                {{--<li><a href="#">Character Sheets</a></li>--}}
             </ul>
         </div>
     </div>
@@ -35,15 +35,16 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li><a href="#">The Legend of Zelda </a></li>
-                <li><a href="#">Final Fantasy</a></li>
-                <li><a href="#">Chrono Series</a></li>
-                <li><a href="#">Mass Effect</a></li>
-                <li><a href="#">Phantasy Star</a></li>
-                <li><a href="#">Tales of Diablo</a></li>
-                <li><a href="#">Legend of Dragoon</a></li>
-                <li><a href="#">Fire Emplem</a></li>
-                <li><a href="#">Etc.</a></li>
+                <li><a href="/gallery">Image Gallery </a></li>
+                {{--<li><a href="#">The Legend of Zelda </a></li>--}}
+                {{--<li><a href="#">Final Fantasy</a></li>--}}
+                {{--<li><a href="#">Chrono Series</a></li>--}}
+                {{--<li><a href="#">Mass Effect</a></li>--}}
+                {{--<li><a href="#">Phantasy Star</a></li>--}}
+                {{--<li><a href="#">Tales of Diablo</a></li>--}}
+                {{--<li><a href="#">Legend of Dragoon</a></li>--}}
+                {{--<li><a href="#">Fire Emplem</a></li>--}}
+                {{--<li><a href="#">Etc.</a></li>--}}
             </ul>
         </div>
     </div>
