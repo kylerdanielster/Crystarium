@@ -2,7 +2,7 @@
 <html>
 <head>
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
@@ -16,7 +16,7 @@
 
 <nav class="navbar navbar-inverse fixed">
     <div class="container-fluid">
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" >
             <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
                 <li><a href="/reviews">Reviews</a></li>
@@ -36,6 +36,7 @@
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
                 <li><a href="/gallery">Image Gallery </a></li>
+                <li><a href="#">Downloads </a></li>
                 {{--<li><a href="#">The Legend of Zelda </a></li>--}}
                 {{--<li><a href="#">Final Fantasy</a></li>--}}
                 {{--<li><a href="#">Chrono Series</a></li>--}}

@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Image;
-use Validator;
 use Illuminate\Http\Request;
+
+use Validator;
+use App\Fileentry;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class ImageController extends Controller
+class FileEntryController extends Controller
 {
     public function __construct()
     {
@@ -21,8 +22,11 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $images = Image::paginate(10);
-        return view('images.images-list')->with('images', $images);
+//        $entries = Fileentry::all();
+//        return view('fileentries.index', compact('entries'));
+
+        $files = Fileentry::all();
+        return view('filePages.files-list')->with('files', $files);
     }
 
     /**
@@ -32,8 +36,24 @@ class ImageController extends Controller
      */
     public function create()
     {
-        return view('images.add-new-image');
+        //
     }
+
+//    public function add() {
+//
+//        $file = Request::file('filefield');
+//        $extension = $file->getClientOriginalExtension();
+//        Storage::disk('local')->put($file->getFilename().'.'.$extension,  File::get($file));
+//        $entry = new Fileentry();
+//        $entry->mime = $file->getClientMimeType();
+//        $entry->original_filename = $file->getClientOriginalName();
+//        $entry->filename = $file->getFilename().'.'.$extension;
+//
+//        $entry->save();
+//
+//        return redirect('fileentry');
+//
+//    }
 
     /**
      * Store a newly created resource in storage.
@@ -45,41 +65,40 @@ class ImageController extends Controller
     {
         // Validation //
         $validation = Validator::make($request->all(), [
-            'userfile'     => 'required|image|mimes:jpeg,png|min:1|max:250'
+            'userfile'     => 'required|mimes:pdf|min:1|max:250'
         ]);
 
-        // Check if it fails //
+
         if( $validation->fails() ){
             return redirect()->back()->withInput()
                 ->with('errors', $validation->errors() );
         }
 
-        $image = new Image;
+        $fileentry = new Fileentry;
 
-        // upload the image //
+        // upload the file //
         $file = $request->file('userfile');
-        $destination_path = 'uploads/';
+        $destination_path = 'files/';
         $filename = str_random(6).'_'.$file->getClientOriginalName();
         $file->move($destination_path, $filename);
 
-        // save image data into database //
-        $image->file = $destination_path . $filename;
-        $image->save();
+        // save file data into database //
+        $fileentry->file = $destination_path . $filename;
+        $fileentry->save();
 
-        return redirect('/gallery')->with('message','You just uploaded an image!');
+        //*****************
+        //NEEDS RETURN/REDIRECT
     }
 
-
     /**
-     * DISPLAY BACKEND ---- MAY NEED TO WIRE UP TO ROUTEu.
+     * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $images = Image::paginate(10);
-        return view('images.image-backend')->with('images', $images);
+        //
     }
 
     /**
@@ -90,8 +109,7 @@ class ImageController extends Controller
      */
     public function edit($id)
     {
-        $image = Image::find($id);
-        return view('edit-image')->with('image', $image);
+        //
     }
 
     /**
@@ -114,8 +132,6 @@ class ImageController extends Controller
      */
     public function destroy($id)
     {
-        $image = Image::find($id);
-        $image->delete();
-        return redirect('/gallery')->with('message','You just uploaded an image!');
+        //
     }
 }
