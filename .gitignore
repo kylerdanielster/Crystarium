@@ -1,7 +1,15 @@
 /vendor
+/tests
 /public/img
+/public/uploads
+/public/filePages
 /node_modules
 Homestead.yaml
 Homestead.json
 .env
 .idea
+.sqlite
+_ide_helper.php
+
+application/config/application.php
+application/config/database.php
