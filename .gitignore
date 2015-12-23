@@ -11,5 +11,5 @@ Homestead.json
 .sqlite
 _ide_helper.php
 
-application/config/application.php
-application/config/database.php
+app/config/app.php
+app/config/database.php
